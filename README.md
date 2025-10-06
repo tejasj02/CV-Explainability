@@ -1,5 +1,11 @@
 # CV-Explainability
-
+This project works with resnet-50 and explaining its image classifications on clothes with GradCAM. The data for this task
+was a subset from this source: https://www.kaggle.com/datasets/agrigorev/clothing-dataset-full. The dataset is a collection of
+clothes with labels such as shirts, pants, and more. To run the code with this data, please download from the link above and 
+extract images_original and images.csv to your workspace. Run the snippet below to install requirements and proceed with main.py.
+```
+pip install -r requirements.txt
+```
 ### shirt
 ![alt text](image.png)
 ### shoes
@@ -12,7 +18,7 @@
 ![alt text](image-4.png)
 
 
-
+### Analysis
 I expected resnet to locate the perimeter and apply judgement from that information as that would make the most logical sense, but that was often not the case. It became hyperfixated on some spot and was able to draw conclusions from there. For the shirt all GradCAMs found information from the same area with Score-CAM using the most information in the image, identifying a shrit as a jersey which is quite close. <br/><br/> For the shoe, all methods were basically the same in explaining the model, all highglighting almost exactly the same. It seemed to find the toe transition of the image highly relevant as well as the upper part of the boot. It can be said that this isn't really a shot and more of a boot and the model predicted cowboy boot which it is similar to.
 <br/><br/>
 The shorts were classified as swimming trunks which is another close one and it seemed the waist height was an identifier for this.
